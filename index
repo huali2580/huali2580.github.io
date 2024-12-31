@@ -1,13 +1,148 @@
-<html>
-<heat>
-<title>小兴机器人</title>
-</heat>
-  <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
-  <body>
-    <h>机器人小兴</h>
-    </br>
-    <iframe height=498 width=510 src="https://chatbot.weixin.qq.com/webapp/3lJGC8UcYzlFImpx3eBeWjomRlE9xa?robotName=%E5%B0%8F%E5%85%B4">小兴</iframe>
-  
-  </body>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>點擊煙花 - 新年快樂</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="fireworksCanvas"></canvas>
 
+  <script>
+    const canvas = document.getElementById("fireworksCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    class Particle {
+      constructor(x, y, color, angle, speed, lifetime, fade) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.angle = angle;
+        this.speed = speed;
+        this.lifetime = lifetime;
+        this.opacity = 1;
+        this.fade = fade;
+        this.gravity = 0.05;
+      }
+
+      update() {
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed + this.gravity;
+        this.speed *= 0.98;
+        this.opacity -= this.fade;
+        this.lifetime -= 1;
+      }
+
+      draw() {
+        if (this.lifetime > 0 && this.opacity > 0) {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+          ctx.fill();
+        }
+      }
+    }
+
+    class Firework {
+      constructor(x, y, message = "") {
+        this.x = x;
+        this.y = y;
+        this.particles = [];
+        this.message = message;
+        this.textOpacity = 1;
+        this.createParticles();
+      }
+
+      createParticles() {
+        const colors = [
+          "255, 0, 0",
+          "0, 255, 0",
+          "0, 0, 255",
+          "255, 255, 0",
+          "255, 0, 255",
+          "0, 255, 255",
+        ];
+
+        for (let i = 0; i < 150; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 4 + 2;
+          const lifetime = Math.random() * 80 + 50;
+          const fade = Math.random() * 0.02 + 0.01;
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          this.particles.push(
+            new Particle(this.x, this.y, color, angle, speed, lifetime, fade)
+          );
+        }
+      }
+
+      update() {
+        this.particles.forEach((particle) => particle.update());
+        this.particles = this.particles.filter(
+          (particle) => particle.lifetime > 0 && particle.opacity > 0
+        );
+
+        if (this.particles.length === 0 && this.textOpacity > 0) {
+          this.textOpacity -= 0.02;
+        }
+      }
+
+      draw() {
+        this.particles.forEach((particle) => particle.draw());
+        if (this.particles.length === 0 && this.textOpacity > 0) {
+          this.drawMessage();
+        }
+      }
+
+      drawMessage() {
+        ctx.font = "48px Arial";
+        // 设置 "新年快樂" 文字颜色为红色
+        ctx.fillStyle = `rgba(255, 0, 0, ${this.textOpacity})`;
+        ctx.textAlign = "center";
+        ctx.fillText(this.message, this.x, this.y);
+      }
+    }
+
+    let fireworks = [];
+    function addFirework(x, y, message = "") {
+      fireworks.push(new Firework(x, y, message));
+    }
+
+    function animate() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      fireworks.forEach((firework) => {
+        firework.update();
+        firework.draw();
+      });
+
+      fireworks = fireworks.filter(
+        (firework) => firework.particles.length > 0 || firework.textOpacity > 0
+      );
+
+      requestAnimationFrame(animate);
+    }
+
+    canvas.addEventListener("click", (event) => {
+      const x = event.clientX;
+      const y = event.clientY;
+      addFirework(x, y, "新年快樂");
+    });
+
+    animate();
+  </script>
+</body>
 </html>
