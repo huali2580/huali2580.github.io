@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新年快樂</title>
+  <title>新年快樂</title></title>
   <style>
     body {
       margin: 0;
@@ -12,6 +12,21 @@
     }
     canvas {
       display: block;
+    }
+    footer {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-align: center;
+      z-index: 10;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -133,9 +148,11 @@
       addFirework(x, y);
     }, 1000);
   </script>
+
   <!-- Copyright Footer -->
   <footer>
     &copy; 2024 <a href="https://www.xiaoqin.idv.tw" target="_blank">xiaoqin</a> - All Rights Reserved
   </footer>
+
 </body>
 </html>
