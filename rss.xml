@@ -6,7 +6,7 @@
   <link href="https://blog.xiaoeis.cc/rss.xml" rel="self"/>
   
   <link href="https://blog.xiaoeis.cc/"/>
-  <updated>2025-11-04T06:49:40.573Z</updated>
+  <updated>2025-11-06T16:03:55.184Z</updated>
   <id>https://blog.xiaoeis.cc/</id>
   
   <author>
@@ -17,13 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>黎明技術學院介紹</title>
+    <link href="https://blog.xiaoeis.cc/2025/11/07/%E9%BB%8E%E6%98%8E%E6%8A%80%E8%A1%93%E5%AD%B8%E9%99%A2%E4%BB%8B%E7%B4%B9/"/>
+    <id>https://blog.xiaoeis.cc/2025/11/07/%E9%BB%8E%E6%98%8E%E6%8A%80%E8%A1%93%E5%AD%B8%E9%99%A2%E4%BB%8B%E7%B4%B9/</id>
+    <published>2025-11-06T16:00:58.000Z</published>
+    <updated>2025-11-06T16:03:55.184Z</updated>
+    
+    <content type="html"><![CDATA[<p>我目前的就讀的學校!</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;我目前的就讀的學校!&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="生活分享" scheme="https://blog.xiaoeis.cc/categories/%E7%94%9F%E6%B4%BB%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>新增評論系統</title>
     <link href="https://blog.xiaoeis.cc/2025/11/04/%E6%96%B0%E5%A2%9E%E8%A9%95%E8%AB%96%E7%B3%BB%E7%B5%B1/"/>
     <id>https://blog.xiaoeis.cc/2025/11/04/%E6%96%B0%E5%A2%9E%E8%A9%95%E8%AB%96%E7%B3%BB%E7%B5%B1/</id>
     <published>2025-11-03T17:27:49.000Z</published>
-    <updated>2025-11-04T06:49:40.573Z</updated>
+    <updated>2025-11-05T14:38:30.821Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="評論系統"><a href="#評論系統" class="headerlink" title="評論系統"></a>評論系統</h2><p>時間：114年11月4日<br>昨天剛搭建好部落格，還沒有評論功能！因為凌晨五點多才睡，導致今天上班一直犯睏，還被領導念，淦！</p><h3 id="Waline-評論系統"><a href="#Waline-評論系統" class="headerlink" title="Waline 評論系統"></a>Waline 評論系統</h3><p>參考：<a href="https://waline.js.org/guide/get-started/">Waline 官方文檔</a><br>Waline 是一個支持免登錄評論的系統，當然也可以選擇登錄後評論。</p><h3 id="新知識分享"><a href="#新知識分享" class="headerlink" title="新知識分享"></a>新知識分享</h3><ul><li><strong>LeanCloud</strong> 是一個免費的數據庫管理系統，雖然有使用限制，但免費資源已經很夠用了，何必在意限額呢？  </li><li><strong>Vercel</strong> 是一個免費的微型伺服器搭建平台，非常適合部署個人項目。</li></ul><h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>雖然今晚早下班，但還是晚睡了，現在已經凌晨一點四十分了，唉……</p><hr><h2 id="評論系統搭建方法總結"><a href="#評論系統搭建方法總結" class="headerlink" title="評論系統搭建方法總結"></a>評論系統搭建方法總結</h2><ul><li><strong>Waline</strong>：評論系統前端  </li><li><strong>LeanCloud</strong>：數據庫儲存  </li><li><strong>Vercel</strong>：伺服器部署  </li><li><strong>Hexo</strong>：博客框架</li></ul><p>我已經在 Vercel 綁定了域名 <code>waline.xiaoeis.cc</code>，所以我的評論系統地址就是這個！</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="評論系統"><a href="#評論系統" class="headerlink" title="評論系統"></a>評論系統</h2><p>時間：114年11月4日<br>昨天剛搭建好部落格，還沒有評論功能！因為凌晨五點多才睡，導致今天上班一直犯睏，還被領導念，淦！</p><h3 id="Waline-評論系統"><a href="#Waline-評論系統" class="headerlink" title="Waline 評論系統"></a>Waline 評論系統</h3><p>參考：<a href="https://waline.js.org/guide/get-started/">Waline 官方文檔</a><br>Waline 是一個支持免登錄評論的系統，當然也可以選擇登錄後評論。</p><h3 id="新知識分享"><a href="#新知識分享" class="headerlink" title="新知識分享"></a>新知識分享</h3><ul><li><strong>LeanCloud</strong> 是一個免費的數據庫管理系統，雖然有使用限制，但免費資源已經很夠用了，何必在意限額呢？  </li><li><strong>Vercel</strong> 是一個免費的微型伺服器搭建平台，非常適合部署個人項目。</li></ul><h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>雖然今晚早下班，但還是晚睡了，現在已經凌晨一點四十分了，唉……</p><hr><h2 id="評論系統搭建方法總結"><a href="#評論系統搭建方法總結" class="headerlink" title="評論系統搭建方法總結"></a>評論系統搭建方法總結</h2><ul><li><strong>Waline</strong>：評論系統前端  </li><li><strong>LeanCloud</strong>：數據庫儲存  </li><li><strong>Vercel</strong>：伺服器部署  </li><li><strong>Hexo</strong>：博客框架</li></ul><p>我已經在 Vercel 綁定了域名 <code>waline.xiaoeis.cc</code>，所以我的評論系統地址就是這個!</p>]]></content>
     
     
       
@@ -43,14 +66,14 @@
     <link href="https://blog.xiaoeis.cc/2025/11/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <id>https://blog.xiaoeis.cc/2025/11/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
     <published>2025-11-02T20:43:23.000Z</published>
-    <updated>2025-11-04T06:47:23.166Z</updated>
+    <updated>2025-11-05T14:38:28.072Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="記錄一下"><a href="#記錄一下" class="headerlink" title="記錄一下"></a>記錄一下</h1><p>今天是中華民國114年11月3日凌晨四點左右，<br>我一整天都在忙著搭建個人部落格，中間遇到了不少問題，<br>直到現在才終於完成搭建！真是辛苦了一整天！</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="記錄一下"><a href="#記錄一下" class="headerlink" title="記錄一下"></a>記錄一下</h2><p>今天是中華民國114年11月3日凌晨四點左右，<br>我一整天都在忙著搭建個人部落格，中間遇到了不少問題，<br>直到現在才終於完成搭建！真是辛苦了一整天！</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;記錄一下&quot;&gt;&lt;a href=&quot;#記錄一下&quot; class=&quot;headerlink&quot; title=&quot;記錄一下&quot;&gt;&lt;/a&gt;記錄一下&lt;/h1&gt;&lt;p&gt;今天是中華民國114年11月3日凌晨四點左右，&lt;br&gt;我一整天都在忙著搭建個人部落格，中間遇到了不少問題，&lt;br&gt;直到現在才</summary>
+    <summary type="html">&lt;h2 id=&quot;記錄一下&quot;&gt;&lt;a href=&quot;#記錄一下&quot; class=&quot;headerlink&quot; title=&quot;記錄一下&quot;&gt;&lt;/a&gt;記錄一下&lt;/h2&gt;&lt;p&gt;今天是中華民國114年11月3日凌晨四點左右，&lt;br&gt;我一整天都在忙著搭建個人部落格，中間遇到了不少問題，&lt;br&gt;直到現在才</summary>
       
     
     
