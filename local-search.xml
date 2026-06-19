@@ -4,6 +4,43 @@
   
   
   <entry>
+    <title>為 Hexo 部落格加入 Live2D 看板娘</title>
+    <link href="/2026/06/20/Live2D/"/>
+    <url>/2026/06/20/Live2D/</url>
+    
+    <content type="html"><![CDATA[<h2 id="第一步：安裝套件"><a href="#第一步：安裝套件" class="headerlink" title="第一步：安裝套件"></a>第一步：安裝套件</h2><p>在部落格根目錄，開啟終端機(CMD)，运行以下命令安装核心插件：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">npm install --save hexo-helper-live2d<br></code></pre></td></tr></table></figure><h2 id="第二步：选择并安裝模型"><a href="#第二步：选择并安裝模型" class="headerlink" title="第二步：选择并安裝模型"></a>第二步：选择并安裝模型</h2><p>看板娘的“皮肤”就是模型。官方提供了很多模型</p><h3 id="1-热门模型推荐"><a href="#1-热门模型推荐" class="headerlink" title="1. 热门模型推荐"></a>1. 热门模型推荐</h3><table><thead><tr><th>模型名稱</th><th>風格描述</th><th>安裝指令</th></tr></thead><tbody><tr><td>hijiki</td><td>🐱 高冷黑貓娘</td><td><code>npm install live2d-widget-model-hijiki</code></td></tr><tr><td>tororo</td><td>🐱 活潑白貓娘</td><td><code>npm install live2d-widget-model-tororo</code></td></tr><tr><td>shizuku</td><td>👧 經典女學生</td><td><code>npm install live2d-widget-model-shizuku</code></td></tr><tr><td>koharu</td><td>👧 可愛粉髮蘿莉</td><td><code>npm install live2d-widget-model-koharu</code></td></tr><tr><td>miku</td><td>🎤 初音未來</td><td><code>npm install live2d-widget-model-miku</code></td></tr><tr><td>wanko</td><td>🐶 萌系小狗娘</td><td><code>npm install live2d-widget-model-wanko</code></td></tr></tbody></table><h3 id="2-安装模型"><a href="#2-安装模型" class="headerlink" title="2.安装模型"></a>2.安装模型</h3><p>本站使用的是 koharu</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">npm install live2d-widget-model-hijiki<br></code></pre></td></tr></table></figure><h2 id="第三步：設定-config-yml"><a href="#第三步：設定-config-yml" class="headerlink" title="第三步：設定 _config.yml"></a>第三步：設定 _config.yml</h2><p>打开博客根目录下的 _config.yml（注意不是主题目录下的），在文件末尾添加以下配置：</p><h1 id="Live2D-看板娘設定"><a href="#Live2D-看板娘設定" class="headerlink" title="Live2D 看板娘設定"></a>Live2D 看板娘設定</h1><p>文档： <a href="https://github.com/EYHN/hexo-helper-live2d">https://github.com/EYHN/hexo-helper-live2d</a></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><br>live2d:<br>  enable: true<br>  scriptFrom: local<br>  pluginRootPath: live2dw/<br>  pluginJsPath: lib/<br>  pluginModelPath: assets/<br>  tagMode: false<br>  log: false<br>  model:<br><span class="hljs-code">    use: live2d-widget-model-hijiki  # 这里填你安装的模型包名</span><br><span class="hljs-code">  display:</span><br><span class="hljs-code">    position: right  # 位置：left 或 right</span><br><span class="hljs-code">    width: 150       # 寬度</span><br><span class="hljs-code">    height: 300      # 高度</span><br><span class="hljs-code">  mobile:</span><br><span class="hljs-code">    show: false      # 行動裝置是否顯示（建議 false，避免遮擋内容）</span><br><span class="hljs-code">  react:</span><br><span class="hljs-code">    opacity: 0.7     # 透明度</span><br><span class="hljs-code"></span><br></code></pre></td></tr></table></figure><h2 id="第四步：行動裝置（重要）"><a href="#第四步：行動裝置（重要）" class="headerlink" title="第四步：行動裝置（重要）"></a>第四步：行動裝置（重要）</h2><p>由于手機熒幕較小，看板娘很容易遮擋正文或菜單欄。</p><p>推荐做法：在config中設定 mobile: show: false（如上所示）。</p><p>高級做法：如果你非要在行動裝置顯示，可以添加自定義 CSS 来調整大小：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">/* source/css/custom.css <span class="hljs-emphasis">*/</span><br><span class="hljs-emphasis">@media (max-width: 768px) &#123;</span><br><span class="hljs-emphasis">  #live2dcanvas &#123;</span><br><span class="hljs-emphasis">    transform: scale(0.5);</span><br><span class="hljs-emphasis">    transform-origin: bottom right;</span><br><span class="hljs-emphasis">  &#125;</span><br><span class="hljs-emphasis">&#125;</span><br><span class="hljs-emphasis"></span><br></code></pre></td></tr></table></figure><h2 id="第五步：本地查看與部署"><a href="#第五步：本地查看與部署" class="headerlink" title="第五步：本地查看與部署"></a>第五步：本地查看與部署</h2><h3 id="1-清理缓存并重新生成"><a href="#1-清理缓存并重新生成" class="headerlink" title="1.清理缓存并重新生成"></a>1.清理缓存并重新生成</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">hexo clean<br>hexo g<br>hexo s<br></code></pre></td></tr></table></figure><p>打开 <a href="http://localhost:4000，你应该就能看到看板娘了！">http://localhost:4000，你应该就能看到看板娘了！</a></p><h3 id="2-部署上線"><a href="#2-部署上線" class="headerlink" title="2.部署上線"></a>2.部署上線</h3><p>確認無誤後，推送至 GitHub：</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d</span><br></code></pre></td></tr></table></figure><p>等待 GitHub Actions 部署完成，你部落格就有看板娘成功登場啦🎉</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>部落格架設</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>Live2D</tag>
+      
+      <tag>看板娘</tag>
+      
+      <tag>部落格美化</tag>
+      
+      <tag>GitHub Pages</tag>
+      
+      <tag>網站開發</tag>
+      
+      <tag>前端開發</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>熱鬧又溫暖的一晚</title>
     <link href="/2026/06/19/post%20copy%202/"/>
     <url>/2026/06/19/post%20copy%202/</url>
@@ -171,6 +208,49 @@
       <tag>心情</tag>
       
       <tag>感受</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>莊敬高職的兩年八個月：我的畢業感想</title>
+    <link href="/2024/06/28/%E9%AB%98%E4%B8%AD%E7%95%A2%E6%A5%AD%E6%84%9F%E6%83%B3/"/>
+    <url>/2024/06/28/%E9%AB%98%E4%B8%AD%E7%95%A2%E6%A5%AD%E6%84%9F%E6%83%B3/</url>
+    
+    <content type="html"><![CDATA[<h2 id="畢業感想"><a href="#畢業感想" class="headerlink" title="畢業感想"></a>畢業感想</h2><p>時間過得真快，轉眼間我已經在莊敬高職國際學校度過了兩年多的時光，今天終於迎來了畢業的時刻。在這個特別的日子裡，我想向所有在這段旅程中支持我的人表示最誠摯的感謝。</p><p>首先，我要感謝莊敬高職的每一位老師和同學。是你們的支持和鼓勵讓我在學業上不斷進步。在這裡，我不僅學到了專業知識，還獲得了多項專業證照，這些都是我未來職業生涯的寶貴資產。莊敬高職不僅是一個學習的地方，更是一個讓我成長和追求夢想的家。</p><p>同樣，我也要特別感謝僑務委員會。自從我來到台灣，僑委會給予了我莫大的支持，幫助我減輕了學雜費的負擔，讓我每學期只需繳納兩萬五到兩萬六的學費。這份支持不僅讓我專注於學業，也讓我在生活中感受到溫暖與關懷。正是因為有了你們的幫助，我才能夠邊學習邊打工，積累社會經驗，並最終順利畢業。</p><p>這兩年八個月零三天的旅程並不容易，我面臨過各種挑戰和困難，但每次想到身邊有這麼多人的支持，我就有了繼續堅持下去的動力。感謝莊敬高職的老師們用心教導，感謝同學們的陪伴與鼓勵，更感謝僑委會的關懷和支持。</p><p>展望未來，我希望能將在莊敬高職所學到的知識和技能，應用到我的職業生涯中，並回饋社會。我將繼續努力，不負這段美好的學習時光，並期待未來的每一個挑戰。</p><p>謝謝你們，莊敬高職與僑務委員會，謝謝你們的支持與鼓勵。讓我們攜手迎接更美好的明天！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>校園生活</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>莊敬高職國際學校</tag>
+      
+      <tag>高中生活</tag>
+      
+      <tag>畢業典禮</tag>
+      
+      <tag>校園回憶</tag>
+      
+      <tag>學習歷程</tag>
+      
+      <tag>畢業感想</tag>
+      
+      <tag>成長紀錄</tag>
+      
+      <tag>夢想</tag>
+      
+      <tag>台灣求學</tag>
+      
+      <tag>青春回憶</tag>
       
     </tags>
     
